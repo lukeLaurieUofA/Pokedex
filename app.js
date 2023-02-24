@@ -5,12 +5,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(express.static("public"));
 
-// this is the secondary branch here
-
 /*
 Sends the main html page when get request recieved
 */
-app.get("/pokemon", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
