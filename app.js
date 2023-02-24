@@ -5,7 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(express.static("public"));
 
-// this is the secondary branch
+// this is the secondary branch here
 
 /*
 Sends the main html page when get request recieved
