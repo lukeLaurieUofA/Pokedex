@@ -1,0 +1,21 @@
+body {
+  background-image: url("images/allPokemon.jpg");
+  background-size: cover;
+  text-align: center;
+  font-family: 'Rowdies', cursive;
+}
+
+
+.main-title {
+  font-size: 5rem;
+  color: gold;
+}
+
+.pokemon-info  {
+  position: relative;
+  top: 150px;
+}
+
+.btn {
+  padding: 2px 3%;
+}

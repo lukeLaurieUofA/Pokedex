@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  background-color: rgb(90, 90, 90);
+}
+
+.top-button {
+  margin: 1%;
+}
+
+.reload {
+  display: inline;
+}
+.header-box {
+  background-color: rgba(30, 30, 30);
+  text-align: center;
+}
+
+.header-text {
+  color: LightBlue;
+  padding: 2% 2% 0;
+}
+
+/* Pokemon info */
+.intro-text {
+  color: DarkSalmon;
+  font-size: 4rem;
+  margin: 2% 0 3%;
+  text-align: center;
+}
+
+.pokemon-container {
+  background-color: white;
+  margin: 3%;
+  padding-bottom: 10%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+}
+
+#pokemon-name {
+  text-align: center;
+  padding-top: 2%;
+}
+
+#pokemon-image {
+  float: left;
+  width: 40%;
+  margin: 0 3% 0 10%;
+}
+
+.left-info {
+  color: rgb(120, 120, 120);
+  font-size: 1rem;
+}
+
+.right-info {
+  font-size: 1.2rem;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.info-table {
+  margin: 6% 0 13%;
+}
+
+tr {
+  border-top: 1px solid rgba(200, 200, 200, 2);
+  border-bottom: 1px solid rgba(200, 200, 200, 2);
+}
+
+td {
+  padding: 5% 0;
+  width: 130px;
+}
+
+.right-data {
+  width: 190px;
+}
+
+/* typing divs */
+#type-one, #type-two {
+  text-align: center;
+  display: inline-block;
+  width: 90px;
+  border-radius: 5px;
+}
+.type-text {
+  color: white;
+  font-size: 1rem;
+  margin: 6% 0;
+}
+
+.normal {
+  background-color: #A8A77A;
+}
+.water {
+  background-color: #6390F0;
+}
+.fire {
+  background-color: #EE8130;
+}
+.grass {
+  background-color: #7AC74C;
+}
+.electric {
+  background-color: #F7D02C;
+}
+.ice {
+  background-color: #96D9D6;
+}
+.fighting {
+  background-color: #C22E28;
+}
+.poison {
+  background-color: #A33EA1;
+}
+.ground {
+  background-color: #E2BF65;
+}
+.flying {
+  background-color: #A98FF3;
+}
+.psychic {
+  background-color: #F95587;
+}
+.bug {
+  background-color: #A6B91A;
+}
+.rock {
+  background-color: #B6A136;
+}
+.ghost {
+  background-color: #735797;
+}
+.dark {
+  background-color: #705746;
+}
+.dragon {
+  background-color: #6F35FC;
+}
+.steel {
+  background-color: #B7B7CE;
+}
+.fairy {
+  background-color: #D685AD;
+}
+
+/* Stat section */
+.stat-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-bar {
+  width: 100%;
+  height: 20px;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.dark-info {
+  color: black;
+}
+
+.left-stat {
+  width: 90px;
+}
+
+.center-stat {
+  width: 60px;
+}
+
+.right-stat {
+  width: 450px;
+}
