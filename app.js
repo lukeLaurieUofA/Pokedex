@@ -5,6 +5,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(express.static("public"));
 
+// please have no comment sire
 /*
 Sends the main html page when get request recieved
 */
