@@ -8,7 +8,7 @@ app.use(express.static("public"));
 /*
 Sends the main html page when get request recieved
 */
-app.get("/hi", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
