@@ -11,13 +11,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
   <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
   <div class="pokemon-info">
     <h1 class="main-title">The Complete Pokedex</h1>
-    <form action="/" method="post">
+    <form action="/pokemon/name" method="post">
+      <input type="text" name="pokemonName" value="">
+      <input type="submit" class="btn btn-warning" value="GO!">
+    </form>
+    <form action="/random" method="post">
       <button class="btn btn-warning" type="submit" name="button">Random Pokemon</button>
     </form>
   </div>

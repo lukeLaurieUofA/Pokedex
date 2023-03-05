@@ -48,25 +48,44 @@ function setData(data) {
   height.innerText = curHeight + " ft";
   weight.innerText = curWeight + " lb";
   abilityOne.innerText = data.abilities[0].ability.name;
-  if (data.abilities.length > 1){
+  if (data.abilities.length > 1) {
     abilityTwo.innerText = data.abilities[1].ability.name;
   }
 }
 
 /*
-* This function will read in an API about a randomly generated
-* pokemon.
-*/
-function getData(){
-  randPokemon = Math.floor(Math.random() * 1009);
-  fetch("https://pokeapi.co/api/v2/pokemon/" + randPokemon)
-    .then(responce => responce.json())
-    .then(data => {
-      setData(data)
+ * This function will read in an API about a randomly generated
+ * pokemon.
+ */
+function getData() {
+  randPokemon = "";
+  fetch("http://localhost:3000/pokemon/api/name")
+    .then(responce => {
+      return responce.text();
+    })
+    .then(text => {
+      // gets the info from the pokemon API
+       fetch("https://pokeapi.co/api/v2/pokemon/" + text)
+         .then(responce => responce.json())
+         .then(data => {
+           setData(data)
+         })
+         .catch(error => {
+           console.log("Error: ", error);
+         })
     })
     .catch(error => {
-      console.log("Error: ", error);
+      console.log("error");
     })
+  //randPokemon = Math.floor(Math.random() * 1009);
+  // fetch("https://pokeapi.co/api/v2/pokemon/" + randPokemon)
+  //   .then(responce => responce.json())
+  //   .then(data => {
+  //     setData(data)
+  //   })
+  //   .catch(error => {
+  //     console.log("Error: ", error);
+  //   })
 }
 
 /*
@@ -74,10 +93,10 @@ function getData(){
 @param {Object} types is a object with all the typings of the randomly
 *generated pokemon
 */
-function setType(types){
+function setType(types) {
   // removes second typing if the pokemon does not have
   let firstType = types[0].type.name;
-  if (types.length == 1){
+  if (types.length == 1) {
     typeTwo.style.display = "none";
     typeOne.className = firstType;
     typeOneText.innerText = firstType;
@@ -98,14 +117,14 @@ function setType(types){
 */
 function setStats(stats) {
   total = 0;
-  for (var i = 0; i < stats.length; i++){
+  for (var i = 0; i < stats.length; i++) {
     // sets the stat on the page
     let statVal = Number(stats[i].base_stat);
     allStats[i].innerText = statVal;
     total += statVal;
     // finds the percentage width of the bar
     let percentage = Math.floor((statVal / 170) * 100);
-    if (percentage > 100){
+    if (percentage > 100) {
       percentage = 100;
     }
     statBars[i].style.width = percentage + "%";
@@ -119,18 +138,18 @@ function setStats(stats) {
 @param {div} bar is a html div containing the current bar
 @param {int} statVal is a int representing the current total
 */
-function setColor(bar, statVal){
-  if (statVal < 25){
+function setColor(bar, statVal) {
+  if (statVal < 25) {
     bar.style.backgroundColor = "rgb(243,68,68)";
-  }else if (statVal < 60){
+  } else if (statVal < 60) {
     bar.style.backgroundColor = "rgb(255,127,15)";
-  }else if (statVal < 90){
+  } else if (statVal < 90) {
     bar.style.backgroundColor = "rgb(255,221,87)";
-  }else if (statVal < 120){
+  } else if (statVal < 120) {
     bar.style.backgroundColor = "rgb(160,229,21)";
-  }else if (statVal < 150){
+  } else if (statVal < 150) {
     bar.style.backgroundColor = "rgb(35,205,94)";
-  }else {
+  } else {
     bar.style.backgroundColor = "rgb(0,194,184)";
   }
 }
