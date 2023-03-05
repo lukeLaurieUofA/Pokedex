@@ -40,8 +40,13 @@ Handles the information that is given by the user whenever the
 random button is clicked
 */
 app.post("/random", (req, res) => {
-  res.redirect("/pokemon");
+  res.redirect("/pokemon/random");
 })
+
+// define a catch-all middleware function
+app.use((req, res, next) => {
+  res.status(404).sendFile(__dirname + "/public/pokemon.html");
+});
 
 app.listen(process.env.PORT || 3000, () => {
   console.log("Listening on port 3000");

@@ -64,6 +64,9 @@ function getData() {
       return responce.text();
     })
     .then(text => {
+      if (text == "random") {
+        text = Math.floor(Math.random() * 1009);
+      }
       // gets the info from the pokemon API
        fetch("https://pokeapi.co/api/v2/pokemon/" + text)
          .then(responce => responce.json())
@@ -71,11 +74,11 @@ function getData() {
            setData(data)
          })
          .catch(error => {
-           console.log("Error: ", error);
+           window.location.href = '/error.html';
          })
     })
     .catch(error => {
-      console.log("error");
+      console.log("Error: ", error);
     })
   //randPokemon = Math.floor(Math.random() * 1009);
   // fetch("https://pokeapi.co/api/v2/pokemon/" + randPokemon)
