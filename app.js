@@ -5,11 +5,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(express.static("public"));
 
-<<<<<<< HEAD
-=======
 pokemonName = null;
 
->>>>>>> secondary
 /*
 Sends the main html page when get request recieved
 */
